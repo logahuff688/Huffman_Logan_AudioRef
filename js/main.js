@@ -1,49 +1,59 @@
- // collect all of the album covers into a variable
- const albumCovers = document.querySelectorAll("#album-art img");
-        theAudioEl = document.querySelector("audio");
-        PlayButton = document.querySelector('#PlayButton');
-        PauseButton = document.querySelector('#PauseButton0');
-        RewindButton = document.querySelector('#RewindButton');
-        VolumeSlider = document.querySelector('#volume-control')
+//coolect all of the album covers into a variable
 
- // tell the audio element to play
- function playAudio() {
-    let currentSrc = `audio/${this.dataset.trackref}.mp3`;
-    // set the new audio source
-    theAudioEl.src = currentSrc;
-    
-
-    // load the new audio source
-    theAudioEl.load();
-    
-
-    // tell the audio element to play
-    theAudioEl.play();
- }
-
- function restartAudio() {
-    theAudioEl.currentTime = 0;
- }
-
- function pauseAudio() {
-    theAudioEl.pause();
- }
-
- function setVolume() {
-    // get the numeric value of the Volume Slider between 0 (min) and 100 (max)
-    // that's what the volume of the audio should be set to
-    console.log(this.value)
-
-    theAudioEl.volume = (this.value/100) // divide the value to get a floating point number between 0 and 1
-    // and then set the audio element's volume level to match
- }
-
- // add event handling to the album covers (listen for a click event)
- albumCovers.forEach(cover => cover.addEventListener('click', playAudio))
+const   albumcovers = document.querySelectorAll("#album-art img"),
+        theAudioEl = document.querySelector('audio'),
+        playbutton = document.querySelector('#play'),
+        stopbutton = document.querySelector('#stop'),
+        rewindbutton = document.querySelector('#rewind'),
+        volslider = document.querySelector('#volumeControl');
 
 
- // add event handling for the custom controls
- PlayButton.addEventListener('click', playAudio);
- RewindButton.addEventListener('click', restartAudio);
- PauseButton.addEventListener('click', pauseAudio);
- VolumeSlider.addEventListener('click', setVolume)
+
+
+//tell the audio elemet to play
+
+function loadAudio() {
+    let currentSrc =`audio/${this.dataset.trackref}.mp3`;
+
+    //set a new audio source
+    theAudioEl.src=currentSrc;
+
+    //load the nnew audio source
+    theAudioEl.load;
+
+
+    //tell the audio element to return
+    playAudio();
+
+}
+//load  a new audio sorce to start play
+
+
+
+
+function playAudio(){ theAudioEl.play();}
+function restartAudio(){ theAudioEl.currentTime = 0;}
+function pauseAudio(){ theAudioEl.pause();}
+
+
+function setVolume(){
+    //get the nnumeric value of the volume slider between 0 min and 100 max
+    //that's what the volume of the audio should be set to 10
+
+    console.log(this.value);
+
+    //divide the value by 100 to get q floating poinnt between o annnd 1 -> .5 .85 etc
+    theAudioEl.volume = (this.value/100);
+}
+
+
+
+//add  event hanndlinng to the album covers (listen for a click event)
+
+albumcovers.forEach(cover => cover.addEventListener('click',loadAudio));
+
+//add event handeling for the custom controls
+playbutton.addEventListener('click', playAudio);
+rewindbutton.addEventListener('click', restartAudio);
+stopbutton.addEventListener('click', pauseAudio)
+volslider.addEventListener('change',setVolume);
