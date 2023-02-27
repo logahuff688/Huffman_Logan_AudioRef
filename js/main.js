@@ -5,7 +5,7 @@
  // tell the audio element to play
  function playAudio() {
     // debug (test) your code at this point before you add anything else
-    debugger;
+    theAudioEl.play();
  }
 
  // add event handling to the album covers (listen for a click event)
