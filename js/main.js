@@ -4,6 +4,7 @@
         PlayButton = document.querySelector('#PlayButton');
         PauseButton = document.querySelector('#PauseButton0');
         RewindButton = document.querySelector('#RewindButton');
+        VolumeSlider = document.querySelector('#volume-control')
 
  // tell the audio element to play
  function playAudio() {
@@ -45,3 +46,4 @@
  PlayButton.addEventListener('click', playAudio);
  RewindButton.addEventListener('click', restartAudio);
  PauseButton.addEventListener('click', pauseAudio);
+ VolumeSlider.addEventListener('click', setVolume)
