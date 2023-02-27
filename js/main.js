@@ -33,7 +33,7 @@
     // that's what the volume of the audio should be set to
     console.log(this.value)
 
-    theAudioEl.volume = this.value/100 // divide the value to get a floating point number between 0 and 1
+    theAudioEl.volume = (this.value/100) // divide the value to get a floating point number between 0 and 1
     // and then set the audio element's volume level to match
  }
 
